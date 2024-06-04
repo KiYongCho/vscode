@@ -1,0 +1,21 @@
+table {
+    width: 400px;
+}
+table, th, td {
+    border: 1px solid gray;
+    border-collapse: collapse;
+    text-align: center;
+}
+thead {
+    background-color: aqua;
+}
+tfoot {
+    background-color: rgb(206, 236, 236);
+}
+td {
+    padding-right: 5px;
+    text-align: right;
+}
+caption {
+    font-size: 30px;
+}
