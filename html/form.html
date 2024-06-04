@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>form 실습</title>
+    <style>
+        input {
+            display: block;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <form action="http://localhost:8888/formtest/formproc.jsp" method="get">
+        <input type="text" name="txt" />
+        <input type="password" name="pwd" />
+        <input type="tel" name="tel" pattern="\d{3}-\d{4}-\d{4}" />
+        <input type="email" name="email" />
+        <input type="date" name="date" />
+        <input type="time" name="time" />
+        <input type="datetime-local" name="datetimelocal" />
+        <input type="number" name="number" min="10" max="50" step="5" />
+        <input type="range" name="range" min="100000" max="500000" />
+        <input type="button" name="button" value="눌러보삼" />
+        <button name="button2">나도눌러보삼</button>
+        <input type="file" name="file" />
+        <input type="hidden" name="hdn" value="123" />
+
+        초딩 <input type="radio" name="rdo" />
+        중딩 <input type="radio" name="rdo" />
+        고딩 <input type="radio" name="rdo" />
+
+        여행 <input type="checkbox" name="cbox1" />
+        요리 <input type="checkbox" name="cbox2" />
+        독서 <input type="checkbox" name="cbox3" />
+
+        <select name="slt" multiple>
+            <optgroup>
+                <option value="apple">사과</option>
+                <option value="banana">바나나</option>
+            </optgroup>
+            <optgroup>
+                <option value="carrot">당근</option>
+                <option value="onion">양파</option>
+            </optgroup>
+        </select>
+
+        <textarea name="ta" rows="10" cols="20" 
+            placeholder="여기다 입력!"></textarea>
+
+        <input type="submit" value="전송" />
+        <input type="reset" value="초기화" />
+    </form>
+</body>
+</html>
