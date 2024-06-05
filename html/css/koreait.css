@@ -1,0 +1,27 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+ul {
+    list-style-type: none;
+}
+ul li {
+    display: inline-block;
+    margin: 0;
+    border: 1px solid #ccc;
+}
+input[type="text"] {
+    width: 460px;
+}
+.title {
+    font-size: 24px;
+    text-align: center;
+}
+#loginform {
+    border: 1px solid #ccc;
+    width: 480px;
+    margin: 250px auto 0 auto;
+}
+#btn {
+    text
+}
