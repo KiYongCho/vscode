@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM ex3</title>
+    <script src="js/domex3.js"></script>
+</head>
+<body>
+    <div id="wrapper">
+        <p>
+            [사각형그리기]&nbsp;
+            X : <input id="rx" type="text" size="3" />&nbsp;
+            Y : <input id="ry" type="text" size="3" />&nbsp;
+            넓이 : <input id="rw" type="text" size="3" />&nbsp;
+            높이 : <input id="rh" type="text" size="3" />&nbsp;
+            <input id="rBtn" type="button" value="그려!" />
+        </p>
+        <p>
+            [원그리기]&nbsp;
+            X : <input id="cx" type="text" size="3" />&nbsp;
+            Y : <input id="cy" type="text" size="3" />&nbsp;
+            반지름 : <input id="cr" type="text" size="3" />&nbsp;
+            <input id="cBtn" type="button" value="그려!" />
+        </p>
+    </div>
+    <svg id="rectsvg" width="600" height="400">
+        <rect id="rect" />
+    </svg>
+    <svg id="circlesvg" width="600" height="400">
+        <circle id="circle" />
+    </svg>    
+</body>
+</html>
