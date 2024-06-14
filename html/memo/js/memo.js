@@ -9,6 +9,8 @@
 */
 $(function() {
 
+    printMemoList();
+
     // 제목과 내용을 입력하고 등록 버튼 누르면
     // 메모 객체 생성해서 addMemo 호출
     $("#writeBtn").click(function() {
@@ -20,13 +22,19 @@ $(function() {
         addMemo(memoObj);
     });
 
+    // ui 클릭...
+    $("#listL ul li").click(function() {
+        console.log($(this).attr("id"));
+        console.log($(this).attr("id").substr(4));
+    });
+
 });
 
 // localStorage의 메모리스트를 가져오는 함수
 function getMemoList() {
     let memoList = localStorage.getItem("memoList");
-    if (memoList==null) {
-        localStorage.setItem("memoList", "");
+    if (memoList==null || memoList=="") {
+        localStorage.setItem("memoList", "[]");
         return [];
     } else {
         return JSON.parse(memoList);
@@ -38,6 +46,7 @@ function addMemo(memoObj) {
     const memoListArr = getMemoList();
     memoListArr[memoListArr.length] = memoObj;
     localStorage.setItem("memoList", JSON.stringify(memoListArr));
+    printMemoList();
 }
 
 // localStorage의 메모리스트에서 메모를 삭제하는 함수
@@ -46,4 +55,14 @@ function removeMemo(key) {
 
 // 최신메모 하나를 가져오는 함수
 function getTopMemo() {
+}
+
+// 메모리스트를 출력하는 함수
+function printMemoList() {
+    $("#listL ul").empty();
+    const memoList = getMemoList().reverse();
+    const memoListLeng = memoList.length;
+    for (let i=0; i<memoListLeng; i++) {
+        $("#listL ul").append("<li id='memo" + i + "'>" + memoList[i].title + "</li>");
+    }
 }

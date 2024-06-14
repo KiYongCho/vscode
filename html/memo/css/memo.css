@@ -33,6 +33,7 @@
 }
 #listL {
     width: 200px;
+    overflow-y: scroll;
 }
 #listL ul {
     height: 160px;
