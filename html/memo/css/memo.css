@@ -1,0 +1,49 @@
+* { padding: 0; margin: 0; }
+#memo {
+    width: 480px;
+    height:320px;
+    border: 1px solid #ddd;
+}
+#memo #top h1 {
+    height: 40px;
+    line-height: 40px;
+    background-color: #666;
+    color: #fff;
+    font-size: 20px;
+    text-align: center;
+}
+#title, #content {
+    width: 410px;
+    margin: 5px;
+}
+#content {
+    height: 60px;
+}
+#writeL, #writeR, #listL, #listR {
+    display: inline-block;
+    float: left;
+}
+#writeBtn {
+    margin-top: 5px;
+    padding: 34px 8px;
+}
+#list {
+    clear: both;
+    padding: 5px;
+}
+#listL {
+    width: 200px;
+}
+#listL ul {
+    height: 160px;
+    border: 1px solid #ddd;
+}
+#listR {
+    margin-left: 5px;
+    width: 200px;
+}
+#listR textarea {
+    width: 260px;
+    height: 160px;
+}
+
