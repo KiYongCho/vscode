@@ -22,10 +22,10 @@ $(function() {
         addMemo(memoObj);
     });
 
-    // ui 클릭...
+    // li 클릭...
     $("#listL ul li").click(function() {
-        console.log($(this).attr("id"));
-        console.log($(this).attr("id").substr(4));
+        console.log($(this).attr("id")); // id
+        console.log($(this).attr("id").substr(4)); // index
     });
 
 });
