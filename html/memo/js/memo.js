@@ -63,6 +63,7 @@ function printMemoList() {
     const memoList = getMemoList().reverse();
     const memoListLeng = memoList.length;
     for (let i=0; i<memoListLeng; i++) {
-        $("#listL ul").append("<li id='memo" + i + "'>" + memoList[i].title + "</li>");
+        $("#listL ul")
+            .append("<li id='memo" + i + "'>" + memoList[i].title + "</li>");
     }
 }
