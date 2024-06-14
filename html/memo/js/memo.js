@@ -8,17 +8,9 @@
     4. 메모리스트의 가장 최근 메모가 우측에 표시된다.
 */
 $(function() {
-    /*
-    const memoArr = [];
-    const memoObj 
-    = { "subject": "제목", "content": "내용", "regdate": "등록일시" }
-    memoArr[memoArr.length] = memoObj;
-    if (localStorage) {
-        localStorage.setItem("memoList", JSON.stringify(memoArr));
-        console.log(localStorage.getItem("memoList"));
-    }
-    */
 
+    // 제목과 내용을 입력하고 등록 버튼 누르면
+    // 메모 객체 생성해서 addMemo 호출
     $("#writeBtn").click(function() {
         const memoObj = {
             title: $("#title").val(),
@@ -29,17 +21,6 @@ $(function() {
     });
 
 });
-
-/*
-    localStorage
-    key   : memoList
-    value : [
-        { "subject": "제목", "content": "내용", "regdate": "등록일시" },
-        { "subject": "제목", "content": "내용", "regdate": "등록일시" },
-        { "subject": "제목", "content": "내용", "regdate": "등록일시" },
-        { "subject": "제목", "content": "내용", "regdate": "등록일시" }
-    ]
-*/
 
 // localStorage의 메모리스트를 가져오는 함수
 function getMemoList() {
@@ -52,7 +33,7 @@ function getMemoList() {
     }
 }
 
-// localStorage의 메모리스트에 메모를 추가하는 함수
+// localStorage에 메모객체를 저장한다.
 function addMemo(memoObj) {
     const memoListArr = getMemoList();
     memoListArr[memoListArr.length] = memoObj;
