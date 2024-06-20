@@ -1,11 +1,14 @@
 let timer = null;
 let ballTop = 265;
 let ballLeft = 265;
-let ballSpeed = 1;
+let movePixel = 1;
+const max = 540;
+const min = 10;
+const interval = 5;
 
 $(function() {
 
-    $("#accel").val("속도:"+ballSpeed);
+    $("#accel").val("속도:"+movePixel);
 
     makeTimer("moveToTop", move("top"));
     makeTimer("moveToBottom", move("bottom"));
@@ -22,26 +25,22 @@ $(function() {
         if (event.keyCode==39) move("right")();
         if (event.keyCode==40) move("bottom")();
         if (event.keyCode==37 && event.keyCode==38) {
-            move("left")();
-            move("top")();
+            move("left")(); move("top")();
         }
         if (event.keyCode==37 && event.keyCode==40) {
-            move("left")();
-            move("bottom")();
+            move("left")(); move("bottom")();
         }
         if (event.keyCode==39 && event.keyCode==38) {
-            move("right")();
-            move("top")();
+            move("right")();    move("top")();
         }
         if (event.keyCode==39 && event.keyCode==40) {
-            move("right")();
-            move("bottom")();
+            move("right")();    move("bottom")();
         }                                
     });
 
     $("#accel").on("click", function() {
-        ballSpeed++;
-        $("#accel").val("속도:"+ballSpeed);
+        movePixel++;
+        $("#accel").val("속도:"+movePixel);
     });    
 
 });
@@ -49,7 +48,7 @@ $(function() {
 const makeTimer = function(id, f) {
     $("#"+id).on("click", function() {
         pause();
-        timer = setInterval(f, 5);
+        timer = setInterval(f, interval);
     });
 };
 
@@ -58,32 +57,39 @@ const pause = function() {
 };
 
 const move = function(direction) {
-    const max = 540;
-    const min = 10;
-    let ballDir = null;
-    let displ = 0;
     switch (direction) {
-        case "top":     ballDir = ballTop;  displ = min;    break;
-        case "bottom":  ballDir = ballTop;  displ = max;    
-                        direction = "top";  break;
-        case "left":    ballDir = ballLeft; displ = min;    break;
-        case "right":   ballDir = ballLeft; displ = max;
-                        direction = "left";  break;
-    }
-    if (direction=="top" || direction=="left") {
-        return function() {
-            if (ballDir >= displ) {
-                ballDir -= ballSpeed;
-                $("#ball").css(direction, ballDir+"px");
-            }
+        case "top": { 
+            return function() {
+                if (ballTop >= min) {
+                    ballTop -= movePixel;
+                    $("#ball").css("top", ballTop+"px");
+                }
+            };
+        }
+        case "bottom": { 
+            return function() {
+                if (ballTop <= max) {
+                    ballTop += movePixel;
+                    $("#ball").css("top", ballTop+"px");
+                }
+            };
+        }
+        case "left": {
+            return function() {
+                if (ballLeft >= min) {
+                    ballLeft -= movePixel;
+                    $("#ball").css("left", ballLeft+"px");
+                }
+            };
         };
-    } else {
-        return function() {
-            if (ballDir <= displ) {
-                ballDir += ballSpeed;
-                $("#ball").css(direction, ballDir+"px");
-            }
-        };        
+        case "right": {
+            return function() {
+                if (ballLeft <= max) {
+                    ballLeft += movePixel;
+                    $("#ball").css("left", ballLeft+"px");
+                }
+            };
+        }; 
     }
     
 }
