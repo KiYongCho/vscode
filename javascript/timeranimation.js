@@ -19,25 +19,6 @@ $(function() {
         pause();
     });    
 
-    $("body").on("keydown", function(event) {
-        if (event.keyCode==37) move("left")();
-        if (event.keyCode==38) move("top")();
-        if (event.keyCode==39) move("right")();
-        if (event.keyCode==40) move("bottom")();
-        if (event.keyCode==37 && event.keyCode==38) {
-            move("left")(); move("top")();
-        }
-        if (event.keyCode==37 && event.keyCode==40) {
-            move("left")(); move("bottom")();
-        }
-        if (event.keyCode==39 && event.keyCode==38) {
-            move("right")();    move("top")();
-        }
-        if (event.keyCode==39 && event.keyCode==40) {
-            move("right")();    move("bottom")();
-        }                                
-    });
-
     $("#accel").on("click", function() {
         movePixel++;
         $("#accel").val("속도:"+movePixel);
@@ -91,5 +72,4 @@ const move = function(direction) {
             };
         }; 
     }
-    
 }
