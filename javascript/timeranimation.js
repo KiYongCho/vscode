@@ -7,46 +7,35 @@ $(function() {
 
     $("#accel").val("속도:"+ballSpeed);
 
-    $("#moveToTop").on("click", function() {
-        pause();
-        timer = setInterval(moveToTop, 5);
-    });
-    $("#moveToBottom").on("click", function() {
-        pause();
-        timer = setInterval(moveToBottom, 5);
-    });
+    makeTimer("moveToTop", move("top"));
+    makeTimer("moveToBottom", move("bottom"));
+    makeTimer("moveToLeft", move("left"));
+    makeTimer("moveToRight", move("right"));
+
     $("#pause").on("click", function() {
         pause();
     });    
-    $("#moveToLeft").on("click", function() {
-        pause();
-        timer = setInterval(moveToLeft, 5);
-    });
-    $("#moveToRight").on("click", function() {
-        pause();
-        timer = setInterval(moveToRight, 5);
-    });
 
     $("body").on("keydown", function(event) {
-        if (event.keyCode==37) moveToLeft();
-        if (event.keyCode==38) moveToTop();
-        if (event.keyCode==39) moveToRight();
-        if (event.keyCode==40) moveToBottom();
+        if (event.keyCode==37) move("left")();
+        if (event.keyCode==38) move("top")();
+        if (event.keyCode==39) move("right")();
+        if (event.keyCode==40) move("bottom")();
         if (event.keyCode==37 && event.keyCode==38) {
-            moveToLeft();
-            moveToTop();
+            move("left")();
+            move("top")();
         }
         if (event.keyCode==37 && event.keyCode==40) {
-            moveToLeft();
-            moveToBottom();
+            move("left")();
+            move("bottom")();
         }
         if (event.keyCode==39 && event.keyCode==38) {
-            moveToRight();
-            moveToTop();
+            move("right")();
+            move("top")();
         }
         if (event.keyCode==39 && event.keyCode==40) {
-            moveToRight();
-            moveToBottom();
+            move("right")();
+            move("bottom")();
         }                                
     });
 
@@ -57,38 +46,44 @@ $(function() {
 
 });
 
-const moveToTop = function() {
-    if (ballTop >= 10) {
-        console.log("ballTop:" + ballTop);
-        ballTop -= ballSpeed;
-        $("#ball").css("top", ballTop+"px");
-    }
-};
-
-const moveToBottom = function() {
-    if (ballTop <= 540) {
-        console.log("ballTop:" + ballTop);
-        ballTop += ballSpeed;
-        $("#ball").css("top", ballTop+"px");
-    }
+const makeTimer = function(id, f) {
+    $("#"+id).on("click", function() {
+        pause();
+        timer = setInterval(f, 5);
+    });
 };
 
 const pause = function() {
     clearInterval(timer);
 };
 
-const moveToLeft = function() {
-    if (ballLeft >= 10) {
-        console.log("ballLeft:" + ballLeft);
-        ballLeft -= ballSpeed;
-        $("#ball").css("left", ballLeft+"px");
+const move = function(direction) {
+    const max = 540;
+    const min = 10;
+    let ballDir = null;
+    let displ = 0;
+    switch (direction) {
+        case "top":     ballDir = ballTop;  displ = min;    break;
+        case "bottom":  ballDir = ballTop;  displ = max;    
+                        direction = "top";  break;
+        case "left":    ballDir = ballLeft; displ = min;    break;
+        case "right":   ballDir = ballLeft; displ = max;
+                        direction = "left";  break;
     }
-};
-
-const moveToRight = function() {
-    if (ballLeft <= 540) {
-        console.log("ballLeft:" + ballLeft);
-        ballLeft += ballSpeed;
-        $("#ball").css("left", ballLeft+"px");
+    if (direction=="top" || direction=="left") {
+        return function() {
+            if (ballDir >= displ) {
+                ballDir -= ballSpeed;
+                $("#ball").css(direction, ballDir+"px");
+            }
+        };
+    } else {
+        return function() {
+            if (ballDir <= displ) {
+                ballDir += ballSpeed;
+                $("#ball").css(direction, ballDir+"px");
+            }
+        };        
     }
-};
+    
+}
