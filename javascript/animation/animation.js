@@ -1,5 +1,6 @@
 let frameCount = 0;
-let ddgTop = 250;
+let ddgMax = 160;
+let ddgHInterval = 5;
 
 $(function() {
     imageAnimate();
@@ -14,8 +15,12 @@ const imageAnimate = function() {
 
 const ddgAnimate = function() {
     const timer = setInterval(function() {
-        if (ddgTop==100) ddgTop = 250;
-        console.log(`${ddgTop-=5}px`);
-        $("#ddg").css("top", `${ddgTop-=5}px`);        
+        console.log(ddgMax);
+        if (ddgMax==220) {
+            ddgHInterval = -5;
+        } else if (ddgMax==100) {
+            ddgHInterval = 5;
+        } 
+        $("#ddg").css("top", `${ddgMax = ddgMax + ddgHInterval}px`);        
     },100);
 };
