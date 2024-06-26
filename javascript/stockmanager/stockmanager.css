@@ -1,0 +1,83 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+div {
+    border: 1px solid #333;
+}
+
+h1, h2 {
+    text-align: center;
+}
+
+input[type='text'], input[type='number'], input[type='date'] {
+    height: 25px;
+}
+input[type='button'] {
+    height: 25px;
+    padding: 0 10px;
+}
+
+#wrapper {
+    width: 820px;
+    height: 600px;
+}
+
+#title {
+    color: white;
+    background-color: black;
+    padding: 10px 0;
+}
+
+.list {
+    float: left;
+    margin: 10px;
+    height: 510px;    
+}
+.list h2 {
+    padding: 10px 0;
+    color: white;
+    background-color: gray;    
+}
+.list table, .list table th, .list table td {
+    border: 1px solid #999;
+    border-collapse: collapse;
+}
+
+#shoplist {
+    width: 278px;
+}
+#shoplist table {
+    width: 278px;
+}
+
+#stocklist {
+    width: 493px;
+}
+#stocklist table {
+    width: 493px;
+}
+
+#shoplist p, #stocklist p {
+    padding: 10px;
+}
+
+#shname {
+    width: 190px;
+}
+
+#stname {
+    width: 190px;
+}
+
+#stamt {
+    width: 70px;
+}
+
+
+
+
+
+
+

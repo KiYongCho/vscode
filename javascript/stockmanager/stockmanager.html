@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>재고관리프로그램 v0.1</title>
+    <link rel="stylesheet" href="stockmanager.css" />
+</head>
+<body>
+    <div id="wrapper">
+        <div id="title">
+            <h1>재고관리프로그램 v1.0</h1>
+        </div>
+        <div id="shoplist" class="list">
+            <h2>매장목록</h2>
+            <p>
+                <input id="shname" type="text" placeholder="매장명" />&nbsp;
+                <input id="shwriteBtn" type="button" value="등록" />
+            </p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>NO</th>
+                        <th>매장명</th>
+                        <th>수량</th>
+                        <th>수정</th>
+                        <th>삭제</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+        <div id="stocklist" class="list">
+            <h2>재고목록</h2>
+            <p>
+                <input id="stname" type="text" placeholder="재고제품명" />&nbsp;
+                <input id="stamt" type="number" placeholder="재고수량" />&nbsp;
+                <input id="stindate" type="date" placeholder="입고일시" />&nbsp;
+                <input id="stwriteBtn" type="button" value="등록" />
+            </p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>NO</th>
+                        <th>재고제품명</th>
+                        <th>수량</th>
+                        <th>입고일시</th>
+                        <th>등록일시</th>
+                        <th>수정</th>
+                        <th>삭제</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>            
+        </div>
+    </div>
+</body>
+</html>
