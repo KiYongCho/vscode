@@ -33,7 +33,7 @@ const initLocalStorage = () => {
 
 // 매장등록
 const writeShop = () => {
-    const shopArr = JSON.parse(getShopList());
+    const shopArr = getShopList();
     shopArr.push(new Shop(getNextShopSeq(), $('#shname').val(), 0));
     localStorage.setItem('shopList', JSON.stringify(shopArr));
     printShopList();
@@ -48,27 +48,36 @@ const getNextShopSeq = () => {
 
 // 매장목록
 const getShopList = () => {
-    return localStorage.getItem('shopList');
+    return JSON.parse(localStorage.getItem('shopList'));
 };
 
 // 매장목록 출력
 const printShopList = () => {
     $('#shoplist table tbody').html('');
-    JSON.parse(getShopList()).forEach(shop => {
+    getShopList().forEach(shop => {
         let tr = $('<tr></tr>');
         tr.append($('<td>' + shop.shno + '</td>'));
         tr.append($('<td>' + shop.shname + '</td>'));
         tr.append($('<td>' + shop.shtotst + '</td>'));
         tr.append($('<td><input type="button" value="수정" /></td>'));
-        tr.append($('<td><input type="button" value="삭제" /></td>'));
+        tr.append($('<td><input id="deleteShop' + shop.shno + '" type="button" value="삭제" /></td>'));
         $('#shoplist table tbody').append(tr);
+        $('#' + 'deleteShop' + shop.shno).on('click', () => {
+            deleteShop(shop.shno);
+        });          
     });
 };
 
 // 매장수정
 
 // 매장삭제
-
+const deleteShop = shno => {
+    const newShopList = getShopList().filter(shop => {
+        return shop.shno != shno;
+    });
+    localStorage.setItem('shopList', JSON.stringify(newShopList));
+    printShopList();
+};
 // 재고목록
 
 // 재고등록
