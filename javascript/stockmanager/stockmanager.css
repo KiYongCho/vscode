@@ -33,7 +33,9 @@ input[type='button'] {
 .list {
     float: left;
     margin: 10px;
-    height: 510px;    
+    height: 510px; 
+    overflow: auto;
+    overflow-x: hidden;
 }
 .list h2 {
     padding: 10px 0;
@@ -41,15 +43,17 @@ input[type='button'] {
     background-color: gray;    
 }
 .list table, .list table th, .list table td {
+    padding: 3px 0;
     border: 1px solid #999;
     border-collapse: collapse;
+    text-align: center;
 }
 
 #shoplist {
     width: 278px;
 }
 #shoplist table {
-    width: 278px;
+    width: 258px;
 }
 
 #stocklist {
@@ -64,7 +68,7 @@ input[type='button'] {
 }
 
 #shname {
-    width: 190px;
+    width: 170px;
 }
 
 #stname {
