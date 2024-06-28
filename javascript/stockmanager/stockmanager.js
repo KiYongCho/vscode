@@ -64,7 +64,7 @@ const printShopList = () => {
         $('#shoplist table tbody').append(tr);
         $('#' + 'deleteShop' + shop.shno).on('click', () => {
             deleteShop(shop.shno);
-        });          
+        });
     });
 };
 
@@ -78,6 +78,7 @@ const deleteShop = shno => {
     localStorage.setItem('shopList', JSON.stringify(newShopList));
     printShopList();
 };
+
 // 재고목록
 
 // 재고등록
