@@ -1,0 +1,46 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+#main {
+    width: 480px;
+    height: 600px;
+    border: 1px solid #333;
+}
+#main h2 {
+    text-align: center;
+    background-color: #666;
+    color: #fff;
+    padding: 5px 0;
+}
+#main p {
+    text-align: center;
+    padding: 5px 0;
+}
+#main p input[type='text'] {
+    width: 80%;
+    height: 18px;
+}
+#main ul {
+    margin: 0 auto;
+    width: 95%;
+    height: 510px;
+    overflow-y: auto;    
+}
+#main ul li {
+    height: 62px;
+    margin: 5px 0;
+    border: 1px solid #eee;
+    background-color: #eee;
+}
+#main ul li p {
+    padding: 5px;
+}
+#main ul li p:first-of-type {
+    font-weight: bold;
+    text-align: right;
+}
+#main ul li p:last-of-type {
+    text-align: left;
+}
