@@ -1,0 +1,45 @@
+* 필요 도구
+- node.js
+- npm (node package manager)
+- web browser
+- IDE (like VSCode)
+- VSCode 플러그인
+  1) eslint 플러그인
+     파일 > 기본설정 > 설정 > eslint.dire 검색 >
+     settings.json편집 > "eslint.workingDirectories": [{"mode": "auto"}] 추가
+  2) night owl 플러그인
+  3) material icon theme 플러그인
+  4) path intellisense 플러그인
+  5) todo highlight 플러그인
+
+  * npm 초기화 및 typescript 설치
+  - (터미널) npm init -y
+  - (터미널) npm install typescript -D
+
+  * tsconfig.json (타입스크립트 설정파일) 생성
+  {
+    "compilerOptions": {
+      "target": "es6",
+      "outDir": "./dist",
+      "module": "commonjs",
+      "strictNullChecks": true
+    },
+    "include": ["**/*.ts"],
+    "exclude": ["node_modules", "dist"]
+  }
+
+* 보안옵션
+  (터미널) Get-ExecutionPolicy
+  (터미널) Set-ExecutionPolicy RemoteSigned
+
+* 환경변수 설정
+  내컴퓨터 > 속성 > 고급시스템설정 > 고급 > 환경변수 > 시스템변수 >
+  Path > 편집 > 새로만들기 > VSCODE루트\typescript\node_modules\.bin
+
+* VSCODE 관리자 권한으로 실행
+  VSCODE바로가기 > 속성 > 바로가기 > 고급 > 관리자권한으로실행 체크
+
+* 트랜스파일러 실행
+  (터미널) tsc -w
+
+
