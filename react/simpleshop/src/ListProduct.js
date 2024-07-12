@@ -13,16 +13,13 @@ export default function ListProduct() {
     registProduct(['7', '상품명7', '상품설명7', './img/7.png', 22000]);
     registProduct(['8', '상품명8', '상품설명8', './img/8.png', 22000]);
 
-    console.log(productList);
-    console.log(productList[0].state.pimg);
-
     return (
         <>
             <div id='listProduct'>
                 <ul>
                     {productList.map((product, idx) =>
-                            <li className='productLi' data-index='{idx}'>
-                                <img src='{product.state.pimg}' /><br />
+                            <li className='productLi' data-index={idx} key={idx}>
+                                <img src={product.state.pimg} /><br />
                                 {product.state.ptitle}<br />
                                 {product.state.pprice}
                             </li>
