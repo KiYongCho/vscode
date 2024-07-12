@@ -1,0 +1,4 @@
+// react 실습 2)
+
+// 두 개의 컴포넌트 (NumberCounter.js, NumberOperator.js)를 생성
+// 두 개의 숫자를 입력받아서 두 숫자의 합을 출력하는 프로그램

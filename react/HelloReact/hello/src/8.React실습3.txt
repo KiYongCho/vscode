@@ -1,0 +1,10 @@
+// React 실습 3) 데이터 가져오기
+
+// GetData.js
+// 1. 페이지가 로딩되면 https://jsonplaceholder.typicode.com/todos의
+//    데이터를 가져온다.
+// 2. 가져온 데이터의 id프라퍼티의 값으로 select를 구성
+// 3. select의 옵션을 선택하면 옵션에 해당하는 todo를 가져와서 화면에 출력
+// 예시) ---전체---  => 전체 데이터 로딩
+//            1     => id가 1번인 데이터 로딩
+

@@ -1,0 +1,17 @@
+[react 실습 : 심플쇼핑몰 만들기]
+
+* 앱이름 : simpleshop (npx create-react-app simpleshop)
+
+* 컴포넌트 구성
+  - 인덱스 : index.js
+  - 상단 : Header.js
+  - 하단 : Footer.js
+  - 상품 : Product.js
+    (pno:상품번호, ptitle:상품명, pcontent:상품설명,
+     pimg:상품이미지, pprice:상품가격)
+  - 상품목록 : ListProduct.js
+  - 상품상세 : DetailProduct.js
+  - NotFound : NotFound.js
+
+* 구현 기능
+  - 상품목록  - 상품상세

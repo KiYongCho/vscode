@@ -1,0 +1,6 @@
+// react 실습 1)
+
+1. 두 개의 컴포넌트 (StringReader.js, StringOperator.js)를 생성
+2. StringReader에서는 문자열을 입력받는다. (input type='text' 활용)
+3. StringOperator에서는 문자를 입력할때마다 
+   입력받은 문자열의 길이를 계산하여 화면에 출력한다. 
