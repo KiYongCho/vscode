@@ -30,3 +30,19 @@
   text-align: center;
   padding: 15px 0;
 }
+
+.productLi {
+  display: inline-block;
+  text-align: center;
+  width: 195px;
+  height: 160px;
+  border: 1px solid #666;
+  padding: 10px;
+  margin: 10px;
+  float: left;
+}
+
+.productLi img {
+  width: 160px;
+  height: 120px;
+}
