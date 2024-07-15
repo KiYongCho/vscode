@@ -1,5 +1,5 @@
 {
-  "name": "hello",
+  "name": "reduxtoolkit",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -12,8 +12,6 @@
     "react-redux": "^9.1.2",
     "react-scripts": "5.0.1",
     "redux": "^5.0.1",
-    "styled-component": "^2.8.0",
-    "styled-components": "^6.1.11",
     "web-vitals": "^2.1.4"
   },
   "scripts": {

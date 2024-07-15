@@ -1,0 +1,5 @@
+// reducer 실습
+
+// 파일 : 13.ReactCalc.js
+// 명령 : plus, minus, multi, devide
+// 기능 : 두 수의 합,차,곱,몫 구하기

@@ -1,0 +1,16 @@
+// redux-toolkit
+
+// 사용목적 : state관리를 redux-toolkit을 통해 컴포넌트 외부에서
+//           일원화할 목적
+
+// 인스톨
+// npm install redux
+// npm install react-redux
+// npm install @reduxjs/toolkit
+
+// 구성 및 역할
+// slice(factory), store(shop), component(client)
+
+// slice : redux-toolkit에서 state, action, reducer를 통합 관리하는 개념
+// store : reducer를 통합관리하기 위한 개념
+// provider : 컴포넌트에 store를 제공하는 역할
